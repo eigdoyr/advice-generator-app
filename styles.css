@@ -1,0 +1,131 @@
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Manrope", sans-serif;
+  background-color: var(--dark-blue);
+  display: grid;
+  place-content: center;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.card-container {
+  background-color: var(--dark-grayish-blue);
+  width: 22rem;
+  height: 22rem;
+  text-align: center;
+  color: var(--light-cyan);
+  padding: 2rem 1rem;
+  border-radius: 0.8rem;
+  position: relative;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  color: var(--neon-green);
+  letter-spacing: 0.25rem;
+}
+
+.dice {
+  position: absolute;
+  bottom: -1.75rem;
+  left: 9rem;
+  background-color: var(--neon-green);
+  border-radius: 50rem;
+  padding: 1rem;
+  border: none !important;
+}
+
+.divider {
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.advice-text {
+  font-size: 1.5rem;
+  padding: 5%;
+}
+
+.dice:hover {
+  box-shadow: 0 3px 20px var(--neon-green);
+}
+
+@media (width>=1024px) {
+  .card-container {
+    height: 22rem;
+    width: 35rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .dice {
+    left: 45.5%;
+  }
+}
