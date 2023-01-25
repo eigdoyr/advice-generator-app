@@ -10,6 +10,7 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -44,13 +45,16 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Manrope", sans-serif;
-  background-color: var(--dark-blue);
+  /* background-color: var(--dark-blue); */
+  background-color: hsl(0, 0%, 0%);
+  display: -ms-grid;
   display: grid;
   place-content: center;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
+  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
 
@@ -70,7 +74,7 @@ select {
 }
 
 .card-container {
-  background-color: var(--dark-grayish-blue);
+  /* background-color: var(--dark-grayish-blue); */
   width: 22rem;
   height: 22rem;
   text-align: center;
@@ -78,6 +82,22 @@ select {
   padding: 2rem 1rem;
   border-radius: 0.8rem;
   position: relative;
+  background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(hsl(0, 0%, 0%)),
+        to(hsl(0, 0%, 0%))
+      )
+      padding-box,
+    -webkit-gradient(linear, left top, right top, from(#08aeea), to(#2af598)) border-box;
+  background: -o-linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 0%)) padding-box,
+    -o-linear-gradient(left, #08aeea 0%, #2af598 100%) border-box;
+  background: linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 0%)) padding-box,
+    linear-gradient(to right, #08aeea 0%, #2af598 100%) border-box;
+  border: 3px solid transparent;
+  -webkit-box-shadow: 0 10px 1000px #08aeea52;
+  box-shadow: 0 10px 1000px #08aeea52;
 }
 
 main {
@@ -95,10 +115,14 @@ h1 {
   position: absolute;
   bottom: -1.75rem;
   left: 9rem;
-  background-color: var(--neon-green);
+  /* background-color: var(--neon-green); */
   border-radius: 50rem;
   padding: 1rem;
   border: none !important;
+  /* background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%); */
+  /* background-color: #85ffbd; */
+  background-image: -o-linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
 }
 
 .divider {
@@ -112,10 +136,28 @@ h1 {
 .advice-text {
   font-size: 1.5rem;
   padding: 5%;
+  background: -webkit-linear-gradient(360deg, #0093e9 0%, #80d0c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .dice:hover {
+  -webkit-box-shadow: 0 3px 20px var(--neon-green);
   box-shadow: 0 3px 20px var(--neon-green);
+  background-color: #08aeea;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#08aeea),
+    to(#2af598)
+  );
+  background-image: -o-linear-gradient(top, #08aeea 0%, #2af598 100%);
+  background-image: linear-gradient(180deg, #08aeea 0%, #2af598 100%);
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
 }
 
 @media (width>=1024px) {
